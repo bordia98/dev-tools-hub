@@ -124,7 +124,7 @@ const TOOLS = [
 // State
 let currentCategory = "all";
 let searchQuery = "";
-let currentView = localStorage.getItem("devtools_view") || "table"; // 'table' or 'grid'
+let currentView = localStorage.getItem("devtools_view") || "grid"; // 'grid' (default) or 'table'
 
 // DOM Elements
 const searchInput = document.getElementById("search-input");
@@ -319,16 +319,22 @@ function updateCatalog() {
   if (filtered.length === 0) {
     emptyState.hidden = false;
     tableContainer.hidden = true;
+    tableContainer.classList.add("view-hidden");
     gridContainer.hidden = true;
+    gridContainer.classList.add("view-hidden");
   } else {
     emptyState.hidden = true;
     if (currentView === "table") {
       tableContainer.hidden = false;
+      tableContainer.classList.remove("view-hidden");
       gridContainer.hidden = true;
+      gridContainer.classList.add("view-hidden");
       renderTable(filtered);
     } else {
       tableContainer.hidden = true;
+      tableContainer.classList.add("view-hidden");
       gridContainer.hidden = false;
+      gridContainer.classList.remove("view-hidden");
       renderGrid(filtered);
     }
   }
@@ -631,8 +637,7 @@ window.addEventListener("keydown", e => {
 // ---------------- Theme Management ---------------- //
 function initTheme() {
   const savedTheme = localStorage.getItem("devtools_theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+  const initialTheme = savedTheme || "light";
 
   document.documentElement.setAttribute("data-theme", initialTheme);
 }
