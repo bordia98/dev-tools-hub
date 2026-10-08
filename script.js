@@ -196,14 +196,14 @@ const TOOLS = [
     tags: ["cron", "crontab", "schedule", "timer", "recurring", "expression", "builder", "job scheduler"]
   },
   {
-    id: "image-compressor",
-    name: "Image Compressor",
+    id: "image-crusher",
+    name: "Image Crusher",
     icon: "🖼️",
     category: "Data & Formatting",
     shortDesc: "Private, browser-based image compressor and resizer.",
     fullDesc: "Compress and resize your images without sending a single pixel to a server. Fast, free, and entirely on your device. Supports dragging and dropping JPG, PNG, WEBP, GIF, and AVIF, and outputting to modern formats like WebP or classic JPEG.",
-    url: "https://bordia98.github.io/ImageCompressor/",
-    repoUrl: "https://github.com/bordia98/ImageCompressor",
+    url: "https://bordia98.github.io/image-crusher/",
+    repoUrl: "https://github.com/bordia98/image-crusher",
     privacy: "100% Client-Side",
     features: [
       "100% Private in-browser compression",
