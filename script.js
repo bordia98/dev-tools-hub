@@ -118,6 +118,101 @@ const TOOLS = [
       "Light and dark themes with one-click copy"
     ],
     tags: ["base64", "encoder", "decoder", "text", "utf-8", "unicode", "url-safe", "atob", "btoa"]
+  },
+  {
+    id: "diff-text-compare",
+    name: "Diff / Text Compare",
+    icon: "⇄",
+    category: "Data & Formatting",
+    shortDesc: "Side-by-side text comparison with highlighted additions, deletions, and changes.",
+    fullDesc: "Compare two texts or code snippets with a powerful diff engine. Supports line-by-line, word-by-word, and character-level diffing. Features split and unified views, inline word-level highlights, ignore whitespace and case options, drag-and-drop file loading, and diff statistics.",
+    url: "https://bordia98.github.io/diff-text-compare/",
+    repoUrl: "https://github.com/bordia98/diff-text-compare",
+    privacy: "100% Client-Side",
+    features: [
+      "Side-by-side split view and unified diff view",
+      "Line, word, and character-level diff modes",
+      "Inline word-level change highlights",
+      "Ignore whitespace and case sensitivity toggles",
+      "Drag-and-drop file upload with diff statistics"
+    ],
+    tags: ["diff", "compare", "text", "merge", "side-by-side", "code diff", "changes", "additions", "deletions"]
+  },
+  {
+    id: "regex-tester",
+    name: "Regex Tester",
+    icon: ".*",
+    category: "Data & Formatting",
+    shortDesc: "Build, test, and debug regular expressions with live match highlighting.",
+    fullDesc: "Write regex patterns and instantly see matches highlighted in your test string. View capture groups, named groups, and match indices. Includes a replace preview, flag toggles (g, m, i, s, u), preset patterns for common use cases, and a comprehensive quick reference cheatsheet.",
+    url: "https://bordia98.github.io/regex-tester/",
+    repoUrl: "https://github.com/bordia98/regex-tester",
+    privacy: "100% Client-Side",
+    features: [
+      "Live match highlighting with color-coded groups",
+      "Capture group and named group display",
+      "Replace preview with group substitution ($1, $2)",
+      "Flag toggles: global, multiline, case-insensitive, dotAll, unicode",
+      "Preset patterns (email, URL, IP, phone, date, hex color)"
+    ],
+    tags: ["regex", "regexp", "regular expression", "pattern", "match", "test", "capture group", "replace"]
+  },
+  {
+    id: "markdown-preview",
+    name: "Markdown Preview",
+    icon: "M↓",
+    category: "Data & Formatting",
+    shortDesc: "Live markdown editor with instant rendered preview and HTML export.",
+    fullDesc: "A real-time Markdown editor with split-pane live preview. Supports GitHub-flavored markdown including headings, bold/italic, code blocks, tables, task lists, blockquotes, links, and images. Features a formatting toolbar, keyboard shortcuts, scroll sync, HTML source view, and export to standalone HTML file.",
+    url: "https://bordia98.github.io/markdown-preview/",
+    repoUrl: "https://github.com/bordia98/markdown-preview",
+    privacy: "100% Client-Side",
+    features: [
+      "Live split-pane markdown rendering",
+      "GFM support: tables, task lists, strikethrough",
+      "Formatting toolbar with keyboard shortcuts",
+      "HTML source view and copy",
+      "Download as standalone HTML file"
+    ],
+    tags: ["markdown", "md", "preview", "editor", "github flavored", "html", "export", "live preview"]
+  },
+  {
+    id: "cron-builder",
+    name: "Cron Expression Builder",
+    icon: "⏰",
+    category: "Time & Date",
+    shortDesc: "Visual cron schedule builder with human-readable descriptions and next-run preview.",
+    fullDesc: "Build cron expressions visually with interactive field selectors. See human-readable descriptions of your schedule, preview the next 10 execution times, and choose from common presets. Supports standard 5-field cron syntax with steps, ranges, lists, and wildcards.",
+    url: "https://bordia98.github.io/cron-builder/",
+    repoUrl: "https://github.com/bordia98/cron-builder",
+    privacy: "100% Client-Side",
+    features: [
+      "Interactive visual builder for each cron field",
+      "Human-readable schedule description",
+      "Next 10 execution time preview",
+      "Quick presets for common schedules",
+      "Full cron syntax reference with examples"
+    ],
+    tags: ["cron", "crontab", "schedule", "timer", "recurring", "expression", "builder", "job scheduler"]
+  },
+  {
+    id: "image-compressor",
+    name: "Image Compressor",
+    icon: "🖼️",
+    category: "Data & Formatting",
+    shortDesc: "Private, browser-based image compressor and resizer.",
+    fullDesc: "Compress and resize your images without sending a single pixel to a server. Fast, free, and entirely on your device. Supports dragging and dropping JPG, PNG, WEBP, GIF, and AVIF, and outputting to modern formats like WebP or classic JPEG.",
+    url: "https://bordia98.github.io/ImageCompressor/",
+    repoUrl: "https://github.com/bordia98/ImageCompressor",
+    privacy: "100% Client-Side",
+    features: [
+      "100% Private in-browser compression",
+      "Support for multiple formats (JPG, PNG, WEBP, GIF, AVIF)",
+      "Granular control over quality and max width",
+      "Batch processing for up to 20 files",
+      "Zero server tracking or uploads"
+    ],
+    tags: ["image", "compressor", "resize", "webp", "jpeg", "media", "optimizer"]
   }
 ];
 
@@ -649,9 +744,31 @@ themeToggleBtn.addEventListener("click", () => {
   localStorage.setItem("devtools_theme", next);
 });
 
+// ---------------- Dynamic Category Counts ---------------- //
+function updateCategoryCounts() {
+  const counts = { all: TOOLS.length };
+  TOOLS.forEach(t => {
+    counts[t.category] = (counts[t.category] || 0) + 1;
+  });
+  const map = {
+    "count-all": counts.all,
+    "count-time": counts["Time & Date"] || 0,
+    "count-web": counts["Web & Network"] || 0,
+    "count-crypto": counts["Security & Crypto"] || 0,
+    "count-auth": counts["Security & Auth"] || 0,
+    "count-data": counts["Data & Formatting"] || 0,
+    "count-encode": counts["Encoding & Decoding"] || 0
+  };
+  for (const [id, count] of Object.entries(map)) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = count;
+  }
+}
+
 // ---------------- Initialization ---------------- //
 function init() {
   initTheme();
+  updateCategoryCounts();
 
   // Set initial view button state
   if (currentView === "grid") {

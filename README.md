@@ -1,6 +1,6 @@
 # Developer Tools Hub & Context Directory
 
-> Centralized routing directory and context table cataloging 6 private, in-browser developer utility web applications hosted on GitHub Pages.
+> Centralized routing directory and context table cataloging 11 private, in-browser developer utility web applications hosted on GitHub Pages.
 
 [![Live Hub](https://img.shields.io/badge/Live_Hub-bordia98.github.io%2Fdev--tools--hub-6366f1?style=for-the-badge&logo=githubpages&logoColor=white)](https://bordia98.github.io/dev-tools-hub/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald?style=for-the-badge)](LICENSE)
@@ -18,6 +18,11 @@
 | **4** | **[JWT Decoder](https://bordia98.github.io/JWTDecoder/)** | Security & Auth | `https://bordia98.github.io/JWTDecoder/` | [bordia98/JWTDecoder](https://github.com/bordia98/JWTDecoder) | In-browser JSON Web Token decoder with syntax coloring. Inspect token header and payload claims (`exp`, `iat`, `sub`, `iss`, `aud`), verify expiration status, with zero data transmission or logging. |
 | **5** | **[JSON Beautifier](https://bordia98.github.io/JsonBeautifier/)** | Data & Formatting | `https://bordia98.github.io/JsonBeautifier/` | [bordia98/JsonBeautifier](https://github.com/bordia98/JsonBeautifier) | Online JSON formatter, validator, syntax highlighter, and minifier. Precise line-and-column syntax error indicator, string escaping/unescaping, and customizable tab/space indentation. |
 | **6** | **[Base64 Text Converter](https://bordia98.github.io/Base64EncoderAndDecoder/)** | Encoding & Decoding | `https://bordia98.github.io/Base64EncoderAndDecoder/` | [bordia98/Base64EncoderAndDecoder](https://github.com/bordia98/Base64EncoderAndDecoder) | Bidirectional Base64 text encoding and decoding with full UTF-8 Unicode support. URL-safe Base64 conversion mode (`-` and `_` substitutes), and instant real-time conversion as you type. |
+| **7** | **[Diff / Text Compare](https://bordia98.github.io/diff-text-compare/)** | Data & Formatting | `https://bordia98.github.io/diff-text-compare/` | [bordia98/diff-text-compare](https://github.com/bordia98/diff-text-compare) | Side-by-side split and unified text/code comparison. Line, word, and character diff modes with inline highlights, whitespace/case toggles, drag-and-drop file loading, and diff statistics. |
+| **8** | **[Regex Tester](https://bordia98.github.io/regex-tester/)** | Data & Formatting | `https://bordia98.github.io/regex-tester/` | [bordia98/regex-tester](https://github.com/bordia98/regex-tester) | Interactive regular expression builder and tester. Real-time match highlighting, capture group breakdown, replace preview with substitution tokens, flag toggles, pattern presets, and cheatsheet. |
+| **9** | **[Markdown Preview](https://bordia98.github.io/markdown-preview/)** | Data & Formatting | `https://bordia98.github.io/markdown-preview/` | [bordia98/markdown-preview](https://github.com/bordia98/markdown-preview) | Real-time Markdown editor with split-pane live preview. Full GitHub Flavored Markdown (GFM) support for tables, task lists, code blocks, formatting toolbar, synchronized scrolling, and HTML export. |
+| **10** | **[Cron Expression Builder](https://bordia98.github.io/cron-builder/)** | Time & Date | `https://bordia98.github.io/cron-builder/` | [bordia98/cron-builder](https://github.com/bordia98/cron-builder) | Visual 5-field cron schedule builder. Generates human-readable schedule explanations, computes next 10 upcoming execution timestamps, with quick common presets and full syntax reference. |
+| **11** | **[Image Compressor](https://bordia98.github.io/ImageCompressor/)** | Data & Formatting | `https://bordia98.github.io/ImageCompressor/` | [bordia98/ImageCompressor](https://github.com/bordia98/ImageCompressor) | Private, browser-based image compressor and resizer. Supports multiple formats (JPG, PNG, WEBP, GIF, AVIF) and batch processing entirely locally. |
 
 ---
 
@@ -29,8 +34,8 @@
 - **Command Palette (`Cmd + K` / `Ctrl + K`)**: Keyboard-driven launcher for rapid access. Press `/` to focus the search bar directly.
 - **Quick Inspector**: Modal drawer detailing technical capabilities, endpoints, and sample usage.
 - **One-Click URL Copying**: Instant clipboard copy feedback for hosted URLs.
-- **Modern Design**: Dark/Light mode theme engine with system detection and local persistence.
-- **100% Client-Side & Private**: All 6 tools run exclusively in your browser with zero remote data collection.
+- **Modern Design**: Light/Dark mode theme engine with system detection and local persistence (light by default).
+- **100% Client-Side & Private**: All 11 tools run exclusively in your browser with zero remote data collection.
 
 ---
 
